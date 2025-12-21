@@ -7,7 +7,7 @@ class CameraConfig:
 
 
 class AIConfig:
-    MODEL_PATH = 'yolov8n.pt'  # Архітектура YOLOv8 [cite: 19]
+    MODEL_PATH = 'best.pt'  # Архітектура YOLOv8 [cite: 19]
     CONFIDENCE = 0.5
     TARGET_CLASS = 0  # Person
     # Зона нечутливості (Deadzone) 10% [cite: 33]
