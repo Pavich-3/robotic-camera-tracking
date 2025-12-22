@@ -15,7 +15,7 @@ def run_benchmark(model_path, model_name, data_path):
 
     # Обчислення FPS
     # Робимо 100 прогонів на порожному тензорі для об'єктивності
-    dummy_input = torch.randn(1, 3, 640, 640)
+    dummy_input = torch.rand(1, 3, 640, 640) # Значення від 0 до 1
     if torch.cuda.is_available():
         model.to('cuda')
         dummy_input = dummy_input.to('cuda')
