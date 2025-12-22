@@ -7,8 +7,8 @@ class CameraConfig:
 
 
 class AIConfig:
-    MODEL_PATH = 'best.pt'  # Архітектура YOLOv8 [cite: 19]
-    CONFIDENCE = 0.5
+    MODEL_PATH = 'models/best.pt'  # Архітектура YOLOv8 [cite: 19]
+    CONFIDENCE = 0.3  # Поріг впевненості 30% [cite: 31]
     TARGET_CLASS = 0  # Person
     # Зона нечутливості (Deadzone) 10% [cite: 33]
     DEADZONE_X = CameraConfig.WIDTH * 0.1

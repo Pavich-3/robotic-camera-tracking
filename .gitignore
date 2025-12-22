@@ -11,6 +11,7 @@ __pycache__/
 build/
 dataset_with_generator/dataset/
 dataset_with_generator/raw_images/
+training/runs
 develop-eggs/
 dist/
 downloads/
