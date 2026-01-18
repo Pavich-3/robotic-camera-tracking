@@ -20,5 +20,6 @@ class SerialCommunicator:
     def send_angles(self, pan, tilt):
         if self.connection and self.connection.is_open:
             # Форматуємо дані як рядок: "90,45\n"
-            data = f"{int(pan),int(tilt)}\n"
+            data = f"{int(pan)},{int(tilt)}\n"
             self.connection.write(data.encode())
+            print(f">>> SERIAL DEBUG: {data.strip()}")

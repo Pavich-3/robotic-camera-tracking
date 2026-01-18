@@ -6,16 +6,20 @@ from ultralytics import YOLO
 def final_benchmark():
     # Автоматичне визначення кореневої папки проєкту
     ROOT = Path(__file__).resolve().parent.parent
-    MODELS_DIR = ROOT / "models"
+    MODELS_DIR = ROOT / "models_v3"
     DATA_YAML = ROOT / "dataset_with_generator" / "dataset" / "data.yaml"
 
     model_files = {
-        "v1_Standard": MODELS_DIR / "v1_best.pt",
-        "v2_Fast_320": MODELS_DIR / "v2_best.pt",
-        "v3_SGD": MODELS_DIR / "v3_best.pt",
-        "v4_Small": MODELS_DIR / "v4_best.pt",
-        "v5_Adam_Aggressive": MODELS_DIR / "v5_best.pt",
-        "v6_Adam_Stable": MODELS_DIR / "v6_best.pt"
+        "v1_best": MODELS_DIR / "v1_best.pt",
+        "v2_best": MODELS_DIR / "v2_best.pt",
+        "v3_best": MODELS_DIR / "v3_best.pt",
+        "v4_best": MODELS_DIR / "v4_best.pt",
+        "v5_best": MODELS_DIR / "v5_best.pt",
+        "v6_best": MODELS_DIR / "v6_best.pt",
+        "v7_best": MODELS_DIR / "v7_best.pt",
+        "v8_best": MODELS_DIR / "v8_best.pt",
+        "v9_best": MODELS_DIR / "v9_best.pt",
+        "v10_best": MODELS_DIR / "v10_best.onnx",
     }
 
     results = []
@@ -43,7 +47,7 @@ def final_benchmark():
     print(df.to_string(index=False))
 
     # Збереження результатів для курсової
-    output_path = ROOT / "training" / "final_model_comparison.csv"
+    output_path = ROOT / "training" / "final_model_comparison_v3.csv"
     df.to_csv(output_path, index=False)
     print(f"\nРезультати збережено у: {output_path}")
 

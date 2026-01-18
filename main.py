@@ -1,8 +1,9 @@
 import cv2 as cv
 import time
-from config import CameraConfig, AIConfig
+from config import CameraConfig, AIConfig, ServoConfig
 from vision.detector import ObjectDetector
 from control.tracking import TrackerController
+from control.serial_comm import SerialCommunicator
 
 
 class TrackingSystem:
@@ -12,6 +13,10 @@ class TrackingSystem:
         self.cap = cv.VideoCapture(CameraConfig.INDEX)
         self.detector = ObjectDetector()
         self.tracker = TrackerController()
+
+        # 1. Додаємо підключення до Arduino
+        self.serial = SerialCommunicator()
+
         self.is_running = True
 
         # Для розрахунку метрики FPS [cite: 32]
@@ -23,15 +28,27 @@ class TrackingSystem:
         if not ret:
             return False
 
-        # 1. Інтелектуальний аналіз (AI)
+        # Отримуємо РЕАЛЬНІ розміри кадру, який дає камера
+        height, width, _ = frame.shape
+
+        # Оновлюємо центр у трекері динамічно
+        self.tracker.center_x = width // 2
+        self.tracker.center_y = height // 2
+        # Оновлюємо Deadzone (10% від реальної ширини)
+        self.tracker.deadzone_x = width * 0.1
+        self.tracker.deadzone_y = height * 0.1
+
         detection = self.detector.get_detections(frame)
 
         if detection:
             coords, conf = detection
-            # 2. Розрахунок логіки керування
+            # 3. Розрахунок кутів
             pan, tilt, center = self.tracker.calculate_angles(coords)
 
-            # Візуалізація результатів детекції
+            # 4. ВІДПРАВКА НА ARDUINO (те, чого не вистачало)
+            if self.serial.connection:
+                self.serial.send_angles(pan, tilt)
+
             self._draw_ui(frame, coords, conf, pan, tilt)
 
         # Розрахунок та вивід FPS для звіту [cite: 32]
@@ -58,8 +75,7 @@ class TrackingSystem:
                    cv.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 255), 2)
 
     def run(self):
-        """Головний цикл роботи програми"""
-        print("Система запущена. Натисніть 'q' для виходу.")
+        print(f"Система запущена. Модель: {AIConfig.MODEL_PATH}")
         while self.is_running:
             if not self.process_frame() or cv.waitKey(1) & 0xFF == ord('q'):
                 self.is_running = False
