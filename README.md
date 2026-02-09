@@ -11,7 +11,7 @@ An advanced robotic platform for automatic real-time object tracking, developed 
 ## 📺 Project Resources
 * **Demo Video:** [Watch 30s Demo](ТВОЄ_ПОСИЛАННЯ_НА_ВІДЕО)
 * **Presentation:** [View on Canva](https://www.canva.com/design/DAG-5S-Ft6U/4QBLoy_iUCWQungKTzG8AA/edit?utm_content=DAG-5S-Ft6U&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
-* **Training Pipeline:** [Google Colab Notebook](https://colab.research.google.com/drive/1KoyhYKBslqNMCmJspQEDHHtCTEqwdPyt?usp=sharing) (Includes automated experiment script)
+* **Training Pipeline:** [Google Colab Notebook](https://colab.research.google.com/drive/1OrkmFTnaheO_BJKmo6nhvCjHu4rZ69vs?usp=sharing) (Includes automated experiment script)
 
 ---
 
