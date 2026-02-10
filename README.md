@@ -1,5 +1,4 @@
 
-https://github.com/user-attachments/assets/7d92f6c3-7891-40ec-9273-57c1a025a891
 # Real-Time Intelligent Object Tracking System with IBVS Control 🤖📸
 
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
