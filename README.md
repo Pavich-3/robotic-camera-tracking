@@ -30,8 +30,8 @@ $$v_c = -\lambda \mathbf{L}_{\mathbf{e}^*}^+ (\mathbf{s}^* - \mathbf{s})$$
 
 Where:
 * **$v_c$**: Angular velocity command for servos.
-* **$\lambda$**: Proportional gain (tuned to 0.1–0.5).
-* **$\mathbf{s}^* - \mathbf{s}$**: Pixel error normalized by the focal length $f$.
+* **$\lambda$**: Proportional gain (tuned to 0.1–0.5 for stability).
+* **$\mathbf{s}^* - \mathbf{s}$**: Visual error vector in pixels normalized by the focal length $f$.
 
 ---
 
