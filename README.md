@@ -23,18 +23,6 @@ An advanced robotic platform for automatic real-time object tracking, developed 
 
 ---
 
-## 🧠 Control Methodology
-The tracking logic is based on minimizing the visual error vector $e(t)$ between the object's centroid and the frame center:
-
-$$v_c = -\lambda \mathbf{L}_{\mathbf{e}^*}^+ (\mathbf{s}^* - \mathbf{s})$$
-
-Where:
-* **$v_c$**: Angular velocity command for servos.
-* **$\lambda$**: Proportional gain (tuned to 0.1–0.5 for stability).
-* **$\mathbf{s}^* - \mathbf{s}$**: Visual error vector in pixels normalized by the focal length $f$.
-
----
-
 ## 🏗️ Hardware Setup
 * **Microcontroller:** Arduino Nano ESP32
 * **Actuators:** 2x MG90S Servos (Pan/Tilt Gimbal)
