@@ -1,3 +1,5 @@
+
+https://github.com/user-attachments/assets/7d92f6c3-7891-40ec-9273-57c1a025a891
 # Real-Time Intelligent Object Tracking System with IBVS Control 🤖📸
 
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
@@ -9,7 +11,12 @@ An advanced robotic platform for automatic real-time object tracking, developed 
 ---
 
 ## 📺 Project Resources
-* **Demo Video:** [Watch 30s Demo](ТВОЄ_ПОСИЛАННЯ_НА_ВІДЕО)
+* **Demo Video:**
+
+
+https://github.com/user-attachments/assets/95661f79-100e-442c-8e4b-1897504d7fcd
+
+
 * **Presentation:** [View on Canva](https://www.canva.com/design/DAG-5S-Ft6U/4QBLoy_iUCWQungKTzG8AA/edit?utm_content=DAG-5S-Ft6U&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 * **Training Pipeline:** [Google Colab Notebook](https://colab.research.google.com/drive/1OrkmFTnaheO_BJKmo6nhvCjHu4rZ69vs?usp=sharing) (Includes automated experiment script)
 
